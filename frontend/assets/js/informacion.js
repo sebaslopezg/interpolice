@@ -14,7 +14,7 @@ function informacion(){
                 <td>${el.apellido}</td>
                 <td>${el.categoria_id_categoria}</td>
                 <td>
-                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                    <button class="btn btn-danger" data-action="delete" data-ciudadano-id="${el.id_ciudadanos}"><i class="bi bi-trash"></i></button>
                     <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
                 </td>
             </tr>
@@ -33,6 +33,12 @@ document.addEventListener('click', (e)=>{
         if (submit == 'btnRegistrar') {
             fntRegistrar()
         }
+    } catch (error) {}
+
+    //intentar obtener el data-action
+
+    try {
+       // let accion = e.target.closestAttribute('id')
     } catch (error) {}
 })
 
