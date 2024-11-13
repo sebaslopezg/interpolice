@@ -1,29 +1,27 @@
-function informacion(){
-    const tabla = document.querySelector('#infoCiudadanos')
+const tabla = document.querySelector('#infoCiudadanos')
 
-    fetch('http://localhost:4100/api/ciudadano/listartodos')
-    .then((res)=> res.json())
-    .then((data) => {
-        data = data.datos
-        data.forEach(el => {
-            console.log(el)
-            tabla.innerHTML += `
-            <tr>
-                <td scope="row">${el.id_ciudadanos}</td>
-                <td>${el.nombre}</td>
-                <td>${el.apellido}</td>
-                <td>${el.categoria_id_categoria}</td>
-                <td>
-                    <button class="btn btn-danger" data-action="delete" data-ciudadano-id="${el.id_ciudadanos}"><i class="bi bi-trash"></i></button>
-                    <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                </td>
-            </tr>
-            `
-        })
-        
-    
+fetch('http://localhost:4100/api/ciudadano/listartodos')
+.then((res)=> res.json())
+.then((data) => {
+    data = data.datos
+    data.forEach(el => {
+        console.log(el)
+        tabla.innerHTML += `
+        <tr>
+            <td scope="row">${el.id_ciudadanos}</td>
+            <td>${el.nombre}</td>
+            <td>${el.apellido}</td>
+            <td>${el.categoria_id_categoria}</td>
+            <td>
+                <button class="btn btn-danger" data-action="delete" data-ciudadano-id="${el.id_ciudadanos}"><i class="bi bi-trash"></i></button>
+                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+            </td>
+        </tr>
+        `
     })
-}
+    
+
+})
 
 document.addEventListener('click', (e)=>{
     try {
