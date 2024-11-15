@@ -18,13 +18,13 @@ ciudadano.post("/api/ciudadano/crear", (req, res) =>{
     bd.query(consulta, [frmDatos], (error, data) =>{
         if (!error) {
             res.status(200).send({
-                status:"OK",
+                status:true,
                 mensaje: "Consulta exitosa",
                 datos: data
             })
         }else{
             res.status(400).send({
-                status:"error",
+                status:false,
                 mensaje: "Error al intentar ejecutar la consulta",
                 error: error
             })
@@ -80,7 +80,7 @@ ciudadano.get("/api/ciudadano/listarporid/:id", (req, res) =>{
 ciudadano.delete("/api/ciudadano/borrarporid/:id", (req, res) =>{
 
     let id = req.params.id 
-    let consulta = 'DELETE FROM ciudadanos WHERE id = ?'
+    let consulta = 'DELETE FROM ciudadanos WHERE id_ciudadanos = ?'
     
     bd.query(consulta, [id], (error, data) =>{
         if (!error) {
