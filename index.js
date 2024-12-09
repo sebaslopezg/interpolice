@@ -16,10 +16,10 @@ app.get('/', (req, res) =>{
     })
 })
 
-app.use(require('./src/ciudadanos.js'))
-app.use(require('./src/antecedentes.js'))
-app.use(require('./src/delitos.js'))
-app.use(require('./src/grados_delitos.js'))
+app.use("/",require('./src/ciudadanos.js'))
+app.use("/",require('./src/antecedentes.js'))
+app.use("/",require('./src/delitos.js'))
+app.use("/",require('./src/grados_delitos.js'))
 
 const port = process.env.PORT || 3000
 
