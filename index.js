@@ -13,7 +13,6 @@ app.get('/', (req, res) =>{
     res.status(200).send({
         status:"OK",
         mensaje: "Bienvenido a la API REST de interpolice",
-        datos: data
     })
 })
 
