@@ -7,8 +7,10 @@ const bd = require('./bd.js')
 ciudadano.post("/api/ciudadano/crear", (req, res) =>{
     //recibimos la data desde el formulario
     let frmDatos = {
+        email:req.body.email,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
+        apodo: req.body.apodo,
         fecha_nacimiento: req.body.fecha_nacimiento,
         categoria_id_categoria: req.body.categoria_id_categoria
     }
