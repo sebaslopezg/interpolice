@@ -120,3 +120,5 @@ delito.delete("/api/delito/borrarporid/:id", (req, res) =>{
         }
     })
 })
+
+module.exports = delito

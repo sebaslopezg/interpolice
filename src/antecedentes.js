@@ -119,3 +119,5 @@ antecedentes.delete("/api/antecedentes/borrarporid/:id", (req, res) =>{
         }
     })
 })
+
+module.exports = antecedentes

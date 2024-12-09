@@ -115,3 +115,5 @@ grados_delitos.delete("/api/grados_delitos/borrarporid/:id", (req, res) =>{
         }
     })
 })
+
+module.exports = grados_delitos
