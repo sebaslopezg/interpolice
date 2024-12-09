@@ -4,7 +4,7 @@ const bd = require('./bd.js')
 
 
 delito.get("/api/delito/listartodos", (req, res) =>{
-    let consulta = "SELECT * FROM delito order by nombre asc"
+    let consulta = "SELECT * FROM delito"
     bd.query(consulta, (error, data) =>{
         if (!error) {
             res.status(200).send({

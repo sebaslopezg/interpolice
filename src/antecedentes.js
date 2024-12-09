@@ -3,7 +3,7 @@ const antecedentes = express()
 const bd = require('./bd.js')
 
 antecedentes.get("/api/antecedentes/listartodos", (req, res) =>{
-    let consulta = "SELECT * FROM antecedentes order by nombre asc"
+    let consulta = "SELECT * FROM antecedentes"
     bd.query(consulta, (error, data) =>{
         if (!error) {
             res.status(200).send({

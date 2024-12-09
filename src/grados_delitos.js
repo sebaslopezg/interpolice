@@ -3,7 +3,7 @@ const grados_delitos = express()
 const bd = require('./bd.js')
 
 grados_delitos.get("/api/grados_delitos/listartodos", (req, res) =>{
-    let consulta = "SELECT * FROM grados_delitos order by nombre asc"
+    let consulta = "SELECT * FROM grados_delitos"
     bd.query(consulta, (error, data) =>{
         if (!error) {
             res.status(200).send({
