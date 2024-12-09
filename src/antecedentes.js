@@ -1,10 +1,9 @@
 const express = require('express')
-const delito = express() 
+const antecedentes = express() 
 const bd = require('./bd.js')
 
-
-delito.get("/api/delito/listartodos", (req, res) =>{
-    let consulta = "SELECT * FROM delito order by nombre asc"
+antecedentes.get("/api/antecedentes/listartodos", (req, res) =>{
+    let consulta = "SELECT * FROM antecedentes order by nombre asc"
     bd.query(consulta, (error, data) =>{
         if (!error) {
             res.status(200).send({
@@ -22,9 +21,9 @@ delito.get("/api/delito/listartodos", (req, res) =>{
     })
 })
 
-delito.get("/api/delito/listarporid/:id", (req, res) =>{
+antecedentes.get("/api/antecedentes/listarporid/:id", (req, res) =>{
     let id = req.params.id
-    let consulta = 'SELECT * FROM delitos WHERE id_delito = ?'
+    let consulta = 'SELECT * FROM antecedentes WHERE id_antecedente = ?'
     
     bd.query(consulta, [id], (error, data) =>{
         if (!error) {
@@ -43,15 +42,15 @@ delito.get("/api/delito/listarporid/:id", (req, res) =>{
     })
 })
 
-delito.post("/api/delito/crear", (req, res) =>{
+antecedentes.post("/api/antecedentes/crear", (req, res) =>{
     let frmDatos = {
-        nombre_delito:req.body.nombre_delito,
-        descripcion_delito:req.body.descripcion_delito,
-        descripcion_delito:req.body.descripcion_delito,
-        grados_delitos_id_grado_delito:req.body.grados_delitos_id_grado_delito,
+        descripcion:req.body.descripcion,
+        ciudadanos_id_ciudadanos :req.body.ciudadanos_id_ciudadanos,
+        Delitos_id_delito:req.body.Delitos_id_delito,
+        fecha:req.body.fecha
     }
 
-    let consulta = 'INSERT INTO delito SET ?'
+    let consulta = 'INSERT INTO antecedentes SET ?'
     
     bd.query(consulta, [frmDatos], (error, data) =>{
         if (!error) {
@@ -70,17 +69,17 @@ delito.post("/api/delito/crear", (req, res) =>{
     })
 })
 
-delito.put("/api/delito/editarporid/:id", (req, res) =>{
+antecedentes.put("/api/antecedentes/editarporid/:id", (req, res) =>{
 
     let id = req.params.id
     let frmDatos = {
-        nombre_delito:req.body.nombre_delito,
-        descripcion_delito:req.body.descripcion_delito,
-        descripcion_delito:req.body.descripcion_delito,
-        grados_delitos_id_grado_delito:req.body.grados_delitos_id_grado_delito,
+        descripcion:req.body.descripcion,
+        ciudadanos_id_ciudadanos :req.body.ciudadanos_id_ciudadanos,
+        Delitos_id_delito:req.body.Delitos_id_delito,
+        fecha:req.body.fecha
     }
 
-    let consulta = 'UPDATE delito SET ? WHERE id_delito = ?'
+    let consulta = 'UPDATE antecedentes SET ? WHERE id_antecedente = ?'
     
     bd.query(consulta, [frmDatos, id], (error, data) =>{
         if (!error) {
@@ -99,10 +98,10 @@ delito.put("/api/delito/editarporid/:id", (req, res) =>{
     })
 })
 
-delito.delete("/api/delito/borrarporid/:id", (req, res) =>{
+antecedentes.delete("/api/antecedentes/borrarporid/:id", (req, res) =>{
 
     let id = req.params.id 
-    let consulta = 'DELETE FROM delitos WHERE id_delito = ?'
+    let consulta = 'DELETE FROM antecedentes WHERE id_antecedente = ?'
     
     bd.query(consulta, [id], (error, data) =>{
         if (!error) {
