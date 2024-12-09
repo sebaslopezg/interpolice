@@ -45,7 +45,7 @@ grados_delitos.get("/api/grados_delitos/listarporid/:id", (req, res) =>{
 grados_delitos.post("/api/grados_delitos/crear", (req, res) =>{
     let frmDatos = {
         nombre:req.body.nombre,
-        descripcion:req.body.descripcion,
+        descripcion:req.body.descripcion
     }
 
     let consulta = 'INSERT INTO grados_delitos SET ?'
