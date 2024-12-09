@@ -1,4 +1,3 @@
-//instancia express : sierve para api rest 
 const express = require('express')
 const ciudadano = express() 
 const bd = require('./bd.js')
@@ -100,7 +99,6 @@ ciudadano.delete("/api/ciudadano/borrarporid/:id", (req, res) =>{
         }
     })
 })
-
 
 //editar un ciudadano
 ciudadano.put("/api/ciudadano/editarporid/:id", (req, res) =>{

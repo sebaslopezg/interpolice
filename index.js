@@ -9,12 +9,12 @@ app.use(cors())
 
 app.use(express.json())
 
-app.get('/', (req, res) =>{
+/* app.get('/', (req, res) =>{
     res.status(200).send({
         status:"OK",
         mensaje: "Bienvenido a la API REST de interpolice",
     })
-})
+}) */
 
 app.use("/",require('./src/ciudadanos.js'))
 app.use("/",require('./src/antecedentes.js'))
