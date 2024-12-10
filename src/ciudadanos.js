@@ -105,10 +105,12 @@ ciudadano.put("/api/ciudadano/editarporid/:id", (req, res) =>{
 
     let id = req.params.id
     let frmDatos = {
+        email:req.body.email,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
+        apodo: req.body.apodo,
         fecha_nacimiento: req.body.fecha_nacimiento,
-        categoria: req.body.categoria_id_categoria
+        categoria_id_categoria: req.body.categoria_id_categoria
     }
 
     let consulta = 'UPDATE ciudadanos SET ? WHERE id = ?'
