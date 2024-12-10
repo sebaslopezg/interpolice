@@ -24,7 +24,7 @@ delitos.get("/api/delitos/listartodos", (req, res) =>{
 
 delitos.get("/api/delitos/listarporid/:id", (req, res) =>{
     let id = req.params.id
-    let consulta = 'SELECT * FROM delitos WHERE id_delitos = ?'
+    let consulta = 'SELECT * FROM delitos WHERE id_delito = ?'
     
     bd.query(consulta, [id], (error, data) =>{
         if (!error) {
