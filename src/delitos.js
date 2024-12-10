@@ -48,7 +48,7 @@ delitos.post("/api/delitos/crear", (req, res) =>{
         nombre_delito:req.body.nombre_delito,
         descripcion_delito:req.body.descripcion_delito,
         descripcion_delito:req.body.descripcion_delito,
-        grados_delitos_id_grado_delito:req.body.grados_delitos_id_grado_delito,
+        grados_delitos_id_grado_delito:req.body.grados_delitos_id_grado_delito
     }
 
     let consulta = 'INSERT INTO delitos SET ?'
