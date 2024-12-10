@@ -113,7 +113,7 @@ ciudadano.put("/api/ciudadano/editarporid/:id", (req, res) =>{
         categoria_id_categoria: req.body.categoria_id_categoria
     }
 
-    let consulta = 'UPDATE ciudadanos SET ? WHERE id = ?'
+    let consulta = 'UPDATE ciudadanos SET ? WHERE id_ciudadanos = ?'
     
     bd.query(consulta, [frmDatos, id], (error, data) =>{
         if (!error) {
